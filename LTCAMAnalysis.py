@@ -23,8 +23,14 @@ if not os.path.exists(os.path.join(dir_path,'temp')):
     os.makedirs(os.path.join(dir_path,'temp'))
 if not os.path.exists(os.path.join(dir_path,'processed')):    
     os.makedirs(os.path.join(dir_path,'processed'))
+if not os.path.exists(os.path.join(dir_path,'processed','LTCAM')):  
+    os.makedirs(os.path.join(dir_path,'processed','LTCAM'))
+    os.makedirs(os.path.join(dir_path,'processed','LTCAM','Measurements'))
+    os.makedirs(os.path.join(dir_path,'processed','LTCAM','Plots'))
+    os.makedirs(os.path.join(dir_path,'processed','LTCAM','Videos'))
 
-fsd = sorted(glob.glob(os.path.join(dir_path,'data', '*mat_3d.npy')))
+
+fsd = sorted(glob.glob(os.path.join(dir_path,'data','LTCAM','*mat_3d.npy')))
 fs = [f[-24:-11] for f in fsd]
 
 fg_color = 'black'
@@ -235,8 +241,8 @@ elif c == 11:
     r0 = 8
     cut = 0
 
-matload = np.load(os.path.join(dir_path,'data',fs[c] + '_mat_3d.npy'))
-t = np.load(os.path.join(dir_path,'data',fs[c] + '_time_3d.npy'))
+matload = np.load(os.path.join(dir_path,'data','LTCAM',fs[c] + '_mat_3d.npy'))
+t = np.load(os.path.join(dir_path,'data','LTCAM',fs[c] + '_time_3d.npy'))
 h_len = np.zeros(len(matload))
 angle_1 = np.zeros(len(matload))
 angle_2 = np.zeros(len(matload))
@@ -381,8 +387,8 @@ for k in range(len(matload)):#range(0,c1+1):#
         
 plt.close('all')
 
-np.save(os.path.join(dir_path, 'processed', fs[c] + '_measure.npy'), [h_len, angle_1, angle_2, angle_1spl, angle_2spl, tempMAX])
-video_name = os.path.join(dir_path, 'processed', 'video_' + fs[c] + '.avi')
+np.save(os.path.join(dir_path, 'processed', 'LTCAM', 'Measurements', fs[c] + '_measure.npy'), [h_len, angle_1, angle_2, angle_1spl, angle_2spl, tempMAX])
+video_name = os.path.join(dir_path, 'processed', 'LTCAM', 'Videos', 'video_' + fs[c] + '.avi')
 images = sorted([img for img in os.listdir(os.path.join(dir_path, 'temp')) if img.endswith(".png")])
 frame = cv2.imread(os.path.join(dir_path, 'temp', images[0]))
 height, width, layers = frame.shape
