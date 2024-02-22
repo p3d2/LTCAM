@@ -73,7 +73,8 @@ In this project, multiple Python files are utilized to process raw data, track m
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](MIT-LICENSE.txt) file for details.
 
 ## Acknowledgments
 
+We acknowledge the computational resources provided by the Aalto Science-IT project
