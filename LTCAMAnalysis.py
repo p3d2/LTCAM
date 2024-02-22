@@ -29,7 +29,6 @@ if not os.path.exists(os.path.join(dir_path,'processed','LTCAM')):
     os.makedirs(os.path.join(dir_path,'processed','LTCAM','Plots'))
     os.makedirs(os.path.join(dir_path,'processed','LTCAM','Videos'))
 
-
 fsd = sorted(glob.glob(os.path.join(dir_path,'data','LTCAM','*mat_3d.npy')))
 fs = [f[-24:-11] for f in fsd]
 
