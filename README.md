@@ -23,18 +23,31 @@ cd LTCAM
 
 This project comes with an env.yml file that specifies all the necessary dependencies and their versions. To create a Miniconda environment with these dependencies, use the following command:
 
-```mamba env create -f env.yml -p env/```
+```bash
+mamba env create -f env.yml -p env/
+```
 
 This command creates a new Conda environment named LTCAM and installs all the required packages listed in env.yml.
 
 Activating the Environment
 Before running the scripts, ensure that the LTCAM environment is activated:
 
-```conda activate ./env```
+```bash
+conda activate ./env
+```
 
-### Add raw data
+### Obtaining and Preparing Raw Data
 
-Download the raw data files from Zenodo (link) and 
+Before running the analysis scripts, it is essential to download the raw data files and place them in the appropriate directory within the project repository. The raw data for this project is hosted on Zenodo. Follow the steps below to prepare your data for analysis:
+
+1. Visit the Zenodo link (Note: Include the actual Zenodo link here)
+2. Download the dataset to your local machine.
+3. Extract the files.
+4. Create a folder named `data` in the root directory of your project repository.
+5. Copy all the downloaded raw data files into the `data` folder.
+3. Ensure the `dir_path` variable in each Python script (`LTCAMAnalysis.py`, `ButterflyTrack.py`, and `RotatingTrack.py`) is set to the path of the `data` folder. This may look like `dir_path = "./data"` depending on your directory structure.
+
+By following these steps, your data will be correctly positioned for analysis, and the scripts should run without issues related to data file locations.
 
 ## Description of Python Files
 
@@ -70,6 +83,11 @@ In this project, multiple Python files are utilized to process raw data, track m
 - **Functionality**: Tailored to work with data from `RotatingTrack.py`, this script needs to be run after `RotatingTrack.py` has processed data with `c` values from 0 to 5.
 - **Purpose**: It analyzes the circumutation movement, specifically focusing on the position of the LTCAM's end, and generates corresponding plots that are stored in the "Plots" subfolder of the "Rotating" directory.
 
+## Running the python scripts
+
+```bash
+python PYTHONFILE.py
+```
 
 ## License
 
@@ -77,4 +95,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](MIT-LICENS
 
 ## Acknowledgments
 
-We acknowledge the computational resources provided by the Aalto Science-IT project
+We acknowledge the computational resources provided by the Aalto Science-IT project.
