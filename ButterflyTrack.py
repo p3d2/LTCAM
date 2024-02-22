@@ -103,9 +103,9 @@ if c == 1:
 fps = 6
 
 TOT = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
-vx = np.zeros(int(TOT/fps)+1)
-vy = np.zeros(int(TOT/fps)+1)
-time = np.zeros(int(TOT/fps)+1)
+vx = np.zeros(int(TOT/fps))
+vy = np.zeros(int(TOT/fps))
+time_f = np.zeros(int(TOT/fps))
 
 fsize = 60
 for k in range(TOT):
@@ -116,7 +116,7 @@ for k in range(TOT):
     # Process every [fps] frames, i.e., every second
     if k % fps == 0:
         
-        time[int(k/fps)] = video.get(cv2.CAP_PROP_POS_MSEC) / 1000
+        time_f[int(k/fps)] = video.get(cv2.CAP_PROP_POS_MSEC) / 1000
         frame_c = frame[y_start:y_end, x_start:x_end]
         
         l_channel = cv2.cvtColor(frame_c, cv2.COLOR_BGR2HSV)[:,:,2]
@@ -164,7 +164,7 @@ move_n = np.zeros(len(vx))
 for k in range(len(vx)):
     move_n[k] = np.linalg.norm(np.array((vx[k],vy[k]))-np.array((vx[0],vy[0])))
 
-np.savez(os.path.join(dir_path,'processed','Butterfly','Measurements', fs[c] + '_measure.npz'), vx=vx[:-1], vy=vy[:-1], time=time[:-1])
+np.savez(os.path.join(dir_path,'processed','Butterfly','Measurements', fs[c] + '_measure.npz'), vx=vx, vy=vy, time=time_f)
 
 
 # IR video read
@@ -204,9 +204,7 @@ for l in range(c0):
     video.write(cv2.imread(os.path.join(dir_path, 'temp', images[l])))
 
 cv2.destroyAllWindows()
-video.release()    
+video.release()
 
-
-
-draw_plots(vx[:-1], vy[:-1], time[:-1], t, t_max)
+draw_plots(vx, vy, time_f, t, t_max)
 plt.savefig(os.path.join(dir_path,'processed','Butterfly','Plots', 'temperature_' + fs[c] + '.pdf'), format='pdf', dpi=dpi)
