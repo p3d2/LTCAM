@@ -16,7 +16,8 @@ First, clone the repository to get a local copy of the project. Then, navigate t
 
 ```bash
 git clone https://github.com/p3d2/LTCAM.git
-cd LTCAM```
+cd LTCAM 
+```
 
 ### Setting Up the Environment
 
