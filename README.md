@@ -65,6 +65,7 @@ In this project, multiple Python files are utilized to process raw data, track m
   - `Plots 1.py` should be run after `LTCAMAnalysis.py` has been executed with `c` values ranging from 0 to 5.
   - `Plots 2.py` requires `LTCAMAnalysis.py` to be run with `c` values from 6 to 13.
 - **Purpose**: They store the generated plots in the "Plots" subfolder within the "LTCAM" directory, visually representing the analysis results.
+- **Configuration**: `dir_path` Update this variable to point to the directory where the data files folder is located.
 
 ### `ButterflyTrack.py`
 
@@ -82,8 +83,11 @@ In this project, multiple Python files are utilized to process raw data, track m
 
 - **Functionality**: Tailored to work with data from `RotatingTrack.py`, this script needs to be run after `RotatingTrack.py` has processed data with `c` values from 0 to 5.
 - **Purpose**: It analyzes the circumutation movement, specifically focusing on the position of the LTCAM's end, and generates corresponding plots that are stored in the "Plots" subfolder of the "Rotating" directory.
+- **Configuration**: `dir_path` Update this variable to point to the directory where the data files folder is located.
 
 ## Running the python scripts
+
+Before running the python scripts, change the `dir_path` and `c` variables as mentioned in the configuration of each file. Then, the scripts can be run using the following command:
 
 ```bash
 python PYTHONFILE.py
