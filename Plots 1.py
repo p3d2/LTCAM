@@ -1,6 +1,18 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+"""
+Generates plots based on the measurements data obtained from running `LTCAMAnalysis.py` ((requires to run c from 0 to 5).
+
+Parameters:
+- dir_path (str): The directory path pointing to where the data files folder is located. 
+This path is used to access the measurements data and store the generated plots.
+
+"""
+
 import os, glob
 
-dir_path = os.path.join('/scratch', 'work', 'silvap1', 'article_rods')
+dir_path = os.path.join(...) # example -> os.path.join('/scratch', 'work', 'silvap1', 'LTCAM_article')
 
 import numpy as np
 import matplotlib.pyplot as plt, matplotlib.font_manager as fmg

@@ -1,14 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""
+Generates plots analyzing the circumutation movement from data processed by `RotatingTrack.py` (requires to run c from 0 to 5).
+
+Parameters:
+- dir_path (str): The directory path pointing to where the data files folder is located. 
+This path is used to access the measurements data and store the generated plots.
+
+"""
+
 import os, glob, math
 
-dir_path = os.path.join('/scratch', 'work', 'silvap1', 'article_rods')
+dir_path = os.path.join(...) # example -> os.path.join('/scratch', 'work', 'silvap1', 'LTCAM_article')
 
-#dir_path = os.path.join(r'\\data.triton.aalto.fi', 'work', 'silvap1', 'article_rods')
-
-fsd = sorted(glob.glob(os.path.join(dir_path,'data','Rotating','*npz')))
-fsd2 = sorted(glob.glob(os.path.join(dir_path,'processed','Rotating','Measurements', '*npz')))
+fsd = sorted(glob.glob(os.path.join(dir_path,'processed','Rotating','Measurements', '*measure.npz')))
+fsd2 = sorted(glob.glob(os.path.join(dir_path,'processed','Rotating','Measurements', '*measureIR.npz')))
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -65,7 +72,7 @@ def draw_all(load_data, data2, method, v_type, a, v, sigma3):
     inters = load_data['inters']
     npoints = load_data['npoints']
     tt = data2['time']
-    t_max = data2['v_max']
+    t_max = data2['t_max']
     points = np.array([(xi, yi) for xi, yi in zip(vx, vy)])
     c1, c2, r = fit_circle(points, threshold=20.0)
     
@@ -75,7 +82,6 @@ def draw_all(load_data, data2, method, v_type, a, v, sigma3):
     df_angle = np.diff(angles_degrees)
     df_angle[abs(df_angle > 100)] -= 360  
     ms = np.median(df_angle)/np.median(np.diff(time))
-    print(np.median(np.diff(time)),np.median(df_angle),np.median(df_angle)/np.median(np.diff(time)))
     
     # Intersections Method 3
     if method == '2':

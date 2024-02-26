@@ -1,11 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""
+Processes raw data from videos of a LTCAM on a rotating platform.
+
+Parameters:
+- c (int): An integer value set between 0 and 5, indicating the specific file to be processed 
+for circumnotation tracking measurements and infrared video generation.
+- dir_path (str): The directory path pointing to where the data files folder is located. 
+
+"""
+
 import os, glob, math
 
-c = 1 # select file to analyse
-dir_path = os.path.join('/scratch', 'work', 'silvap1', 'article_rods')
-#dir_path = os.path.join(r'\\data.triton.aalto.fi', 'work', 'silvap1', 'article_rods')
+c = ... # select file to analyse 
+dir_path = os.path.join(...) # example -> os.path.join('/scratch', 'work', 'silvap1', 'LTCAM_article')
 
 fsd_vid = sorted(glob.glob(os.path.join(dir_path,'data','Rotating','*mp4')))
 fs = [f[-29:-7] for f in fsd_vid]

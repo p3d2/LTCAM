@@ -1,9 +1,20 @@
 # RUN ALL
 
+
+"""
+Tracks the movement of a butterfly textile, creating directories for organizing the output.
+
+Parameters:
+- c (int): An integer value set between 0 and 1, indicating the specific file to be processed 
+for butterfly tracking analysis.
+- dir_path (str): The directory path pointing to where the data files folder is located. 
+
+"""
+
 import os, glob
-dir_path = os.path.join('/scratch', 'work', 'silvap1', 'article_rods')
-#dir_path = os.path.join(r'\\data.triton.aalto.fi', 'work', 'silvap1', 'article_rods')
-c = 1
+
+c = ... # select file to analyse 
+dir_path = os.path.join(...) # example -> os.path.join('/scratch', 'work', 'silvap1', 'LTCAM_article')
 
 import cv2
 import numpy as np

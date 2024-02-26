@@ -1,10 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""
+Initiates the data processing workflow for LTCAM analysis.
+
+Parameters:
+    - c (int): An integer value between 0 and 13, indicating the specific file to be processed 
+    for LTCAM analysis. For `Plots 1.py`, `c` should range from 0 to 5. For `Plots 2.py`, `c` 
+    should range from 6 to 13.
+    - dir_path (str): The directory path pointing to where the data files folder is located. 
+    This path is used to access the measurements data and store the generated plots.
+"""
+
 import os, glob, time
 
-c = 13 # select file to analyse
-dir_path = os.path.join('/scratch', 'work', 'silvap1', 'article_rods')
+c = ... # select file to analyse 
+dir_path = os.path.join(...) # example -> os.path.join('/scratch', 'work', 'silvap1', 'LTCAM_article')
 
 import numpy as np
 import cv2
