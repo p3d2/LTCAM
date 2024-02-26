@@ -93,6 +93,10 @@ Before running the python scripts, change the `dir_path` and `c` variables as me
 python PYTHONFILE.py
 ```
 
+## About the data and experiments
+
+[Information about the dataset](https://github.com/p3d2/LTCAM/wiki/Info-Data)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](MIT-LICENSE.txt) file for details.
