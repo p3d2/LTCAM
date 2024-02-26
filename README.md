@@ -57,6 +57,7 @@ In this project, multiple Python files are utilized to process raw data, track m
 
 - **Functionality**: This script initiates the data processing workflow by creating a "processed" folder, within which a subfolder named "LTCAM" is generated. Inside the "LTCAM" folder, it further creates subfolders named "Measurements", "Plots", and "Videos".
 - **Purpose**: It analyzes raw data to make measurements and produce an infrared video, organizing the output into the respective subfolders.
+- **Configuration**: `dir_path` Update this variable to point to the directory where the data files folder is located. `c` - This integer value should be set between 0 and 13, indicating the specific file to be processed for LTCAM analysis.
 
 ### `Plots 1.py` and `Plots 2.py`
 
@@ -64,7 +65,6 @@ In this project, multiple Python files are utilized to process raw data, track m
   - `Plots 1.py` should be run after `LTCAMAnalysis.py` has been executed with `c` values ranging from 0 to 5.
   - `Plots 2.py` requires `LTCAMAnalysis.py` to be run with `c` values from 6 to 13.
 - **Purpose**: They store the generated plots in the "Plots" subfolder within the "LTCAM" directory, visually representing the analysis results.
-- **Configuration**: `dir_path` Update this variable to point to the directory where the data files folder is located. `c` - This integer value should be set between 0 and 13, indicating the specific file to be processed for LTCAM analysis.
 
 ### `ButterflyTrack.py`
 
