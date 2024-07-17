@@ -40,7 +40,7 @@ conda activate ./env
 
 Before running the analysis scripts, it is essential to download the raw data files and place them in the appropriate directory within the project repository. The raw data for this project is hosted on Zenodo. Follow the steps below to prepare your data for analysis:
 
-1. Visit the Zenodo link (Note: Include the actual Zenodo link here)
+1. Visit the Zenodo link https://zenodo.org/records/10695914
 2. Download the dataset to your local machine.
 3. Extract the files.
 4. Create a folder named `data` in the root directory of your project repository.
@@ -61,7 +61,7 @@ In this project, multiple Python files are utilized to process raw data, track m
 
 ### `Plots 1.py` and `Plots 2.py`
 
-- **Functionality**: These scripts are designed to generate plots based on the measurements data obtained from running `LTCAMAnalysis.py`.
+- **Functionality**: These scripts are designed to generate plots based on the measurement data obtained from running `LTCAMAnalysis.py`.
   - `Plots 1.py` should be run after `LTCAMAnalysis.py` has been executed with `c` values ranging from 0 to 5.
   - `Plots 2.py` requires `LTCAMAnalysis.py` to be run with `c` values from 6 to 13.
 - **Purpose**: They store the generated plots in the "Plots" subfolder within the "LTCAM" directory, visually representing the analysis results.
@@ -76,18 +76,18 @@ In this project, multiple Python files are utilized to process raw data, track m
 ### `RotatingTrack.py`
 
 - **Functionality**: This script processes raw data from videos of a LTCAM on a rotating platform. It creates a "processed" folder with a "Rotating" subfolder, which also includes "Measurements", "Plots", and "Videos" subfolders.
-- **Purpose**: It performs circumnotation tracking measurements and generates an infrared video of the LTCAM's movement.
+- **Purpose**: It performs circumnutation tracking measurements and generates an infrared video of the LTCAM's movement.
 - **Configuration**: `dir_path` Update this variable to point to the directory where the data files folder is located. `c` - This integer value should be set between 0 and 5, indicating the specific file to be processed for RotatingTrack analysis.
 
 ### `Plots 3.py`
 
 - **Functionality**: Tailored to work with data from `RotatingTrack.py`, this script needs to be run after `RotatingTrack.py` has processed data with `c` values from 0 to 5.
-- **Purpose**: It analyzes the circumutation movement, specifically focusing on the position of the LTCAM's end, and generates corresponding plots that are stored in the "Plots" subfolder of the "Rotating" directory.
+- **Purpose**: It analyzes the circumnutation movement, specifically focusing on the position of the LTCAM's end, and generates corresponding plots stored in the "Plots" subfolder of the "Rotating" directory.
 - **Configuration**: `dir_path` Update this variable to point to the directory where the data files folder is located.
 
 ## Running the python scripts
 
-Before running the python scripts, change the `dir_path` and `c` variables as mentioned in the configuration of each file. Then, the scripts can be run using the following command:
+Before running the Python scripts, change the `dir_path` and `c` variables as mentioned in the configuration of each file. Then, the scripts can be run using the following command:
 
 ```bash
 python PYTHONFILE.py
