@@ -1,9 +1,10 @@
 # Light-driven multidirectional bending in artificial muscles
 <a href="https://doi.org/10.5281/zenodo.10695914"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10695914.svg" alt="DOI"></a>
 
-Supporting code for the research article (click on the image to access the full article)
+Supporting code for the research article **Light-Driven Multidirectional Bending in Artificial Muscles** (open access on Advanced Materials <a href="https://doi.org/10.1002/adma.202405917">https://doi.org/10.1002/adma.202405917</a>)
 
 <a href="https://onlinelibrary.wiley.com/doi/10.1002/adma.202405917"><img src="https://raw.githubusercontent.com/p3d2/LTCAM/main/images/toc_with_a_cat.png">
+
 
 ## Getting Started
 
