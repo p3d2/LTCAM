@@ -1,7 +1,9 @@
 # Light-driven multidirectional bending in artificial muscles
 <a href="https://doi.org/10.5281/zenodo.10695914"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10695914.svg" alt="DOI"></a>
 
-Provide a brief description of what your project does and its purpose. This introduction should give users a clear idea of the project's goals and the problems it aims to solve.
+Supporting code for the research article (click on the image to access the full article)
+
+<a href="https://onlinelibrary.wiley.com/doi/10.1002/adma.202405917"><img src="https://raw.githubusercontent.com/p3d2/LTCAM/main/images/toc_with_a_cat.png">
 
 ## Getting Started
 
